@@ -30,10 +30,8 @@ let save = (title, imageURL, hostName, location, rooms, size, type, place, check
     house.save((err, house) => {
         if(err) return console.error(err);
         console.log('saved successfully!', house)
-    })
-
-}
-
+    });
+};
 
 
 

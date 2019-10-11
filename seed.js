@@ -5,7 +5,7 @@ let populate = () => {
     //this populate db
 
     for(let i = 0; i < 100; i++) {
-        let title = faker.lorem.words();
+        let title = faker.address.streetName() + ' - ' + faker.lorem.words();
         let imageUrl = faker.image.people();
         let hostName = faker.name.findName();
         let location = faker.address.city();

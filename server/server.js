@@ -10,8 +10,12 @@ var faker = require('faker');
 
 app.get('/house', (req, res) => {
     
-    
-    res.send()
+    mongo.house.find({}, (err, house) => {
+        if(err) return console.log(err);
+        console.log(house)
+        res.send(house)
+    })
+
 })
 
 // app.post('/house', (req, res) => {

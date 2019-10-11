@@ -13,16 +13,20 @@ class App extends Component {
         
 
         return (
-            <div>
+            <div style={{height: '100%'}}>
+
                 <Summary>
-                summary top section
+                    <Section1 />
                 </Summary>
+
                 <Spec>
-                    spec
+                    <Section2 />
                 </Spec>
+
                 <Rundown>
-                    rundown
+                    <Section3 />
                 </Rundown>
+
             </div>
         )
     }
@@ -36,7 +40,7 @@ const Summary = styled.div`
     box-sizing: border-box;
     width: 594px;
     height: 141px;
-    background-color: grey;
+    /* background-color: grey; */
 `; 
 
 const Spec = styled(Summary)`

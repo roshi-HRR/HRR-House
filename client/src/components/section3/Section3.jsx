@@ -8,7 +8,7 @@ class Section3 extends Component {
     render() {
         return(
             <div>
-                section3
+                
             </div>
         )
     }

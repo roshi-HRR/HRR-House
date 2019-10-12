@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(express.static('./client/dist'));
 const mongo = require('./database/database.js');
-var faker = require('faker');
+
 
 
 

@@ -26,6 +26,7 @@
     "mongoose": "^5.7.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-feather": "^2.0.3",
     "react-native": "^0.61.2",
     "styled-components": "^4.4.0",
     "webpack": "^4.41.0",

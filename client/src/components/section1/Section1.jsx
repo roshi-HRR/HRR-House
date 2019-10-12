@@ -4,52 +4,49 @@ import styled from 'styled-components';
 class Section1 extends Component {
     constructor(props) {
         super(props)
-
-        this.state = {
-            title: '',
-            location: '',
-            url: '',
-            host: ''
-        }
     }
 
-    componentDidMount() {
-        let randomIdx = Math.floor(Math.random() * 100)
-        
-        fetch('/house')
-            .then((res) => res.json())
-            .then(res => {
-                console.log(res[randomIdx])
-                this.setState({
-                    title: res[randomIdx].title,
-                    location: res[randomIdx].location,
-                    url: res[randomIdx].imageURL,
-                    host: res[randomIdx].hostName
-                })
-            })
-    }
 
     render() {
+        let randomIdx = Math.floor(Math.random() * 100)
+        
         return(
-            <Container >
-                <Left >
-                    <Title>
-                         {this.state.title}
-                    </Title>
-                    <Location>
-                         {this.state.location}
-                    </Location>
-                </ Left>
-                <Right >
-                    <Pic src={this.state.url} ></Pic>
-                    <Host >{this.state.host}</Host>
-                </ Right>
-            </Container>
+            <div>
+                <Container >
+                    <Left >
+                        <Title>
+                            {this.props.house.length > 0 && this.props.house[randomIdx].title}
+                        </Title>
+                        <Location>
+                            {this.props.house.length > 0 && this.props.house[randomIdx].location}
+                        </Location>
+                    </ Left>
+                    <Right >
+                        <Pic src={this.props.house.length > 0 && this.props.house[randomIdx].imageURL} ></Pic>
+                        {/* <Pic src='http://lorempixel.com/640/480/people/'></Pic> */}
+                        <Host >{this.props.house.length > 0 && this.props.house[randomIdx].hostName}</Host>
+                    </ Right>
+
+                    
+                </Container>
+                <Line2 />
+            </div>
         )
     }
 }
 
+const Line = styled.div`
+    border-bottom-width: var(--border-rule-border-width, 1px) !important;
+    border-bottom-color: var(--color-divider, #EBEBEB) !important;
+    border-bottom-style: solid !important;
+`;
+
+const Line2 = styled(Line)`
+    margin-top: 17px;
+`
+
 const Container = styled.div`
+    box-sizing: border-box;
     display: flex;
     height: 100%;
 `;

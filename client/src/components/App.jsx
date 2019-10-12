@@ -7,20 +7,29 @@ import Section3 from './section3/Section3.jsx';
 class App extends Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            house: []
+        }
+    }
+
+    componentDidMount() {
+        
+        fetch('/house')
+            .then((res) => res.json())
+            .then(res => this.setState({house: res}))
     }
 
     render() {
-        
-
         return (
             <div style={{height: '100%'}}>
 
                 <Summary>
-                    <Section1 />
+                    <Section1 house={this.state.house}/>
                 </Summary>
 
                 <Spec>
-                    <Section2 />
+                    <Section2 house={this.state.house}/>
                 </Spec>
 
                 <Rundown>
@@ -45,7 +54,7 @@ const Summary = styled.div`
 
 const Spec = styled(Summary)`
     height: 210.955px;
-    background-color: brown;
+    /* background-color: brown; */
 `;
 
 const Rundown = styled(Summary)`

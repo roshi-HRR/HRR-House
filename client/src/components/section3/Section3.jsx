@@ -11,7 +11,8 @@ class Section3 extends Component {
 
         this.state = {
             status: 'collapse',
-            show: false
+            show: false,
+            idx:  Math.floor(Math.random() * 100)
         }
     };
 
@@ -35,15 +36,13 @@ class Section3 extends Component {
 
     render() {
 
-        let randomIdx = Math.floor(Math.random() * 100);
-        
         return(
             <Container >
                 <Paragraph style={{display: this.state.status === 'collapse' ? 'block' : 'none' }}>
-                    {this.props.house.length > 0 && this.props.house[randomIdx].space.slice(0, 350)}...
+                    {this.props.house.length > 0 && this.props.house[this.state.idx].space.slice(0, 350)}...
                 </Paragraph>
                 <Actual style={{display: this.state.status === 'expand' ? 'block' : 'none' }}>
-                    {this.props.house.length > 0 && this.props.house[randomIdx].space}
+                    {this.props.house.length > 0 && this.props.house[this.state.idx].space}
                 </Actual>
                 <Expand onClick={(e) => this.handleExpand(e)} style={{display: this.state.status === 'collapse' ? 'block' : 'none' }}>
                     Read more about the space 

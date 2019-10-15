@@ -69,11 +69,12 @@ export default class Modal extends React.Component {
     flex-direction: column;
   `;
 
-  const Ax = styled.div`
+  const Ax = styled.span`
     display: inline-block;
     margin-top: 25px;
     margin-left: 30px;
     cursor: pointer;
+    width: 30px;
   `
 
   const Fb = styled.div`

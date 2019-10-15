@@ -16,7 +16,7 @@ class Experience extends Component {
                 {this.props.house.length > 0 && this.props.house[randomIdx].check.experience}
                 </Title>
                 <Descrip >
-                    <span>{this.props.house.length > 0 && this.props.house[randomIdx].check.experienceDescrip
+                    <span>{this.props.house.length > 0 && this.props.house[randomIdx].check.experienceDescrip.slice(0, 35)
 }</span>                  
                 </Descrip>
             </Container>
@@ -25,7 +25,7 @@ class Experience extends Component {
 };
 
 const Container = styled.div`
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 `;
 
 const Title = styled.div`

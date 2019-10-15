@@ -33,7 +33,7 @@ class App extends Component {
                 </Spec>
 
                 <Rundown>
-                    <Section3 />
+                    <Section3 Section2 house={this.state.house}/>
                 </Rundown>
 
             </div>
@@ -59,7 +59,7 @@ const Spec = styled(Summary)`
 
 const Rundown = styled(Summary)`
     height: 287.604px;
-    background-color: purple;
+    /* background-color: purple; */
 `;
 
 export default App;

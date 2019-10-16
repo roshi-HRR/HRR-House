@@ -1,5 +1,8 @@
 {
   "name": "",
+  "jest": {
+    "verbose": true
+  },
   "version": "",
   "description": "",
   "author": "",
@@ -33,6 +36,8 @@
     "webpack-cli": "^3.3.9"
   },
   "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "jest": "^24.9.0",
     "nodemon": "^1.19.3"

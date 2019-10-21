@@ -16,7 +16,7 @@ class Location extends Component {
                     {this.props.house.length > 0 && this.props.house[randomIdx].place.location}
                 </Title>
                 <Descrip >
-                    <span>{this.props.house.length > 0 && this.props.house[randomIdx].place.locationDescrip.slice(0, 35)}</span>                  
+                    <span>{this.props.house.length > 0 && this.props.house[randomIdx].place.locationDescrip.slice(0, 35)}</span>
                 </Descrip>
             </Container>
         )

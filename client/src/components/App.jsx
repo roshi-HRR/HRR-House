@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Section1 from './section1/Section1.jsx';
 import Section2 from './section2/Section2.jsx';
 import Section3 from './section3/Section3.jsx';
+const fetch = require("node-fetch");
 
 class App extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        
+
         fetch('/house')
             .then((res) => res.json())
             .then(res => this.setState({house: res}))
@@ -50,7 +51,7 @@ const Summary = styled.div`
     width: 594px;
     height: 141px;
     /* background-color: grey; */
-`; 
+`;
 
 const Spec = styled(Summary)`
     height: 210.955px;

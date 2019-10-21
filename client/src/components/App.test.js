@@ -1,19 +1,30 @@
-// describe('Testing functionality of Jest', () => {
-//     it('sums numbers', () => {
-//         expect(1+2).toEqual(3)
-//         expect(2+2).toEqual(4)
+import React, { Component } from 'react';
+import { shallow, mount } from 'enzyme';
+
+import App from './App.jsx';
+import Section1 from './section1/Section1.jsx';
+
+// describe('<App />', () => {
+
+//     test('It renders Section1', () => {
+//       const wrapper = shallow(<App />);
+  
+//       expect(wrapper.text()).toEqual('<Section1 />');
 //     });
 // });
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
+describe('<App />', () => {
+    it('renders one <Section1 /> components', () => {
+      const wrapper = shallow(<App />);
+      expect(wrapper.find(Section1)).to.have.lengthOf(1);
+    });
+})
 
+// describe('App Unit Tests', () => {
+//     it('renders to page', () => {
+//       const wrapper = shallow(<App />);
+  
+//       expect(wrapper.exists()).toBe(true);
+//     })
 
-
-describe('renders without crasing', () => {
-   const div = document.createElement("div");
-   ReactDOM.render(<App />, div);
-   console.log('true')
-   ReactDOM.unmountComponentAtNode(div);
-});
+// });

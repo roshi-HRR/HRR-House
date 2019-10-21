@@ -1,3 +1,5 @@
+require('babel-polyfill')
+
 module.exports = {
     entry: __dirname + '/client/src/index.jsx',
     module: {
@@ -8,7 +10,12 @@ module.exports = {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-react', '@babel/preset-env']
+              presets: ['@babel/preset-react', '@babel/preset-env'],
+              plugins: ["transform-export-extensions", "@babel/transform-runtime"],
+              only: [
+                "./**/*.js", "./**/*.jsx",
+                "node_modules/jest-runtime"
+              ]
             }
           }
         }

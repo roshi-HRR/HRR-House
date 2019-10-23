@@ -17,7 +17,7 @@ class Experience extends Component {
                 </Title>
                 <Descrip >
                     <span>{this.props.house.length > 0 && this.props.house[randomIdx].check.experienceDescrip.slice(0, 35)
-}</span>                  
+}</span>
                 </Descrip>
             </Container>
         )
@@ -30,12 +30,12 @@ const Container = styled.div`
 
 const Title = styled.div`
     margin-left: 10px;
-    word-wrap: break-word !important;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    line-height: 1.375em !important;
-    color: #484848 !important;
+    word-wrap: break-word;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.375em;
+    color: #484848;
     display: inline-block;
 `;
 

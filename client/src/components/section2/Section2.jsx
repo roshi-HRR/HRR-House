@@ -12,21 +12,21 @@ class Section2 extends Component {
     render() {
         return(
             <Container>
-                
-                <Type house={this.props.house}/>    
-                <Location house={this.props.house}/>    
-                <Experience house={this.props.house}/>    
+
+                <Type house={this.props.house}/>
+                <Location house={this.props.house}/>
+                <Experience house={this.props.house}/>
                 <Line />
-                
+
             </Container>
         )
     }
 };
 
 const Line = styled.div`
-    border-bottom-width: var(--border-rule-border-width, 1px) !important;
-    border-bottom-color: var(--color-divider, #EBEBEB) !important;
-    border-bottom-style: solid !important;
+    border-bottom-width: 1px;
+    border-bottom-color: #EBEBEB;
+    border-bottom-style: solid;
 `;
 
 const Container = styled.div`

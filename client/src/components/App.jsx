@@ -12,16 +12,25 @@ class App extends Component {
         this.state = {
             house: []
         }
+
     }
 
-    componentDidMount() {
+    async componentDidMount() {
 
-        fetch('/house')
-            .then((res) => res.json())
-            .then(res => this.setState({house: res}))
+        // fetch('/house')
+        // .then((res) => res.json())
+        // .then(res => this.setState({house: res}))
+
+        const response = await fetch('/house');
+        const json = await response.json()
+            .then(res => this.setState({house: res}) )
+
     }
+
+
 
     render() {
+
         return (
             <div style={{height: '100%'}}>
 
@@ -50,17 +59,14 @@ const Summary = styled.div`
     box-sizing: border-box;
     width: 594px;
     height: 141px;
-    /* background-color: grey; */
 `;
 
 const Spec = styled(Summary)`
     height: 210.955px;
-    /* background-color: brown; */
 `;
 
 const Rundown = styled(Summary)`
     height: 287.604px;
-    /* background-color: purple; */
 `;
 
 export default App;

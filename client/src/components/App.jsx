@@ -17,9 +17,21 @@ class App extends Component {
 
     componentDidMount() {
 
-        fetch('/house')
+        //http://localhost:3005/?house_id=10
+
+        const url = new URL(window.location.href);
+        const houseId = url.searchParams.get('house_id')
+        console.log(houseId)
+
+        fetch(`/house/${houseId}`)
         .then((res) => res.json())
         .then(res => this.setState({house: res}))
+
+
+
+        // fetch('/house')
+        // .then((res) => res.json())
+        // .then(res => this.setState({house: res}))
 
     }
 

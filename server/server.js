@@ -10,34 +10,22 @@ const mongo = require('./database/database.js');
 
 app.get('/house', (req, res) => {
 
-    // mongo.house.find({}, (err, house) => {
-    //     if(err) return console.log(err);
-    //     console.log(house)
-    //     res.send(house)
-    // })
-
     mongo.house.findOne({unique: Math.floor(Math.random() * 100)}, (err, house) => {
         if(err) return console.log(err);
         console.log(house)
         res.send(house)
-    })
-
+    });
 })
 
-// app.post('/house', (req, res) => {
+app.get('/house/:id', (req, res) => {
 
-//     mongo.save('title1', 'www.yo.com', 'host1', 'location1',
-//      {guests: 4, bedroom: 5, beds: 3, bath: 3},
-//      {home: 'big', homeDescrip: 'nice and clean'},
-//      {host: 'super', hostDescrip: 'weird'},
-//      {location: 'tx', locationDescrip: 'safe'},
-//      {experience: 'good', experienceDescrip: 'positive'},
-//      'space1');
+    mongo.house.findOne({ unique: req.params.id }, (err, house) => {
+        if(err) return console.log(err);
+        // console.log(house)
+        res.send(house)
+    });
 
-//         res.send();
-// })
-
-
+})
 
 
 

@@ -35,6 +35,5 @@ let save = (unique, title, imageURL, hostName, location, rooms, size, type, plac
 };
 
 
-
 module.exports.save = save;
 module.exports.house = House;

@@ -5,16 +5,17 @@ mongoose.connect(mongo, { useUnifiedTopology: true, useNewUrlParser: true })
 mongoose.set('useCreateIndex', true)
 
 
-//create the schema 
+//create the schema
 let houseSchema = mongoose.Schema({
+    unique: Number,
     title: String,
     imageURL: String,
     hostName: String,
     location: String,
     rooms: { guests: Number, bedroom: Number, beds: Number, bath: Number },
-    size: { home: String, homeDescrip: String}, 
-    type: {host: String, hostDescrip: String}, 
-    place: {location: String, locationDescrip: String}, 
+    size: { home: String, homeDescrip: String},
+    type: {host: String, hostDescrip: String},
+    place: {location: String, locationDescrip: String},
     check: {experience: String, experienceDescrip: String },
     space: String
 })
@@ -23,9 +24,9 @@ let houseSchema = mongoose.Schema({
 let House = mongoose.model('House', houseSchema);
 
 //post to db
-let save = (title, imageURL, hostName, location, rooms, size, type, place, check, space) => {
+let save = (unique, title, imageURL, hostName, location, rooms, size, type, place, check, space) => {
 
-    let house = new House({ title, imageURL, hostName, location, rooms, size, type, place, check, space });
+    let house = new House({ unique, title, imageURL, hostName, location, rooms, size, type, place, check, space });
 
     house.save((err, house) => {
         if(err) return console.error(err);

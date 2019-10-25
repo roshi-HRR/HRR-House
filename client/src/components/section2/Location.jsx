@@ -8,15 +8,15 @@ class Location extends Component {
     }
 
     render() {
-        let randomIdx = Math.floor(Math.random() * 100)
+
         return(
             <Container >
                 <MapPin size={13} color='#484848'/>
                 <Title >
-                    {this.props.house.length > 0 && this.props.house[randomIdx].place.location}
+                    {typeof this.props.house === 'object' && this.props.house.place && this.props.house.place.location}
                 </Title>
                 <Descrip >
-                    <span>{this.props.house.length > 0 && this.props.house[randomIdx].place.locationDescrip.slice(0, 35)}</span>
+                    <span>{typeof this.props.house === 'object' && this.props.house.place && this.props.house.place.locationDescrip.slice(0, 35)}</span>
                 </Descrip>
             </Container>
         )

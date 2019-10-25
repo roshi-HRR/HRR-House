@@ -39,10 +39,10 @@ class Section3 extends Component {
         return(
             <Container >
                 <Paragraph style={{display: this.state.status === 'collapse' ? 'block' : 'none' }}>
-                    {this.props.house.length > 0 && this.props.house[this.state.idx].space.slice(0, 350)}...
+                    {typeof this.props.house === 'object' && this.props.house.space && this.props.house.space.slice(0, 350)}...
                 </Paragraph>
                 <Actual style={{display: this.state.status === 'expand' ? 'block' : 'none' }}>
-                    {this.props.house.length > 0 && this.props.house[this.state.idx].space}
+                    {typeof this.props.house === 'object' && this.props.house.space}
                 </Actual>
                 <Expand onClick={(e) => this.handleExpand(e)} style={{display: this.state.status === 'collapse' ? 'block' : 'none' }}>
                     Read more about the space

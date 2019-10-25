@@ -15,15 +15,11 @@ class App extends Component {
 
     }
 
-    async componentDidMount() {
+    componentDidMount() {
 
-        // fetch('/house')
-        // .then((res) => res.json())
-        // .then(res => this.setState({house: res}))
-
-        const response = await fetch('/house');
-        const json = await response.json()
-            .then(res => this.setState({house: res}) )
+        fetch('/house')
+        .then((res) => res.json())
+        .then(res => this.setState({house: res}))
 
     }
 
@@ -33,7 +29,6 @@ class App extends Component {
 
         return (
             <div style={{height: '100%'}}>
-
                 <Summary>
                     <Section1 house={this.state.house}/>
                 </Summary>

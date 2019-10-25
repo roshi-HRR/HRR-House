@@ -8,18 +8,18 @@ class Type extends Component {
     }
 
     render() {
-        let randomIdx = Math.floor(Math.random() * 100)
+        console.log(this.props.house)
         return(
             <Container>
                 <Home size={13} color='#484848' />
                 <Title>
-                    {this.props.house.length > 0 && this.props.house[randomIdx].size.home}
+                    {typeof this.props.house === 'object' && this.props.house.size && this.props.house.size.home}
                 </Title>
                 <Rooms >
-                    <span>{this.props.house.length > 0 && this.props.house[randomIdx].rooms.guests} guest(s)</span>
-                    <span>{this.props.house.length > 0 && this.props.house[randomIdx].rooms.bedroom} bedroom</span>
-                    <span>{this.props.house.length > 0 && this.props.house[randomIdx].rooms.beds} bed(s)</span>
-                    <span>{this.props.house.length > 0 && this.props.house[randomIdx].rooms.bath} bath</span>
+                    <span>{typeof this.props.house === 'object' && this.props.house.rooms && this.props.house.rooms.guests} guest(s)</span>
+                    <span>{typeof this.props.house === 'object' && this.props.house.rooms && this.props.house.rooms.bedroom} bedroom</span>
+                    <span>{typeof this.props.house === 'object' && this.props.house.rooms && this.props.house.rooms.beds} bed(s)</span>
+                    <span>{typeof this.props.house === 'object' && this.props.house.rooms && this.props.house.rooms.bath} bath</span>
                 </Rooms>
             </Container>
         )

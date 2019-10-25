@@ -8,16 +8,15 @@ class Experience extends Component {
     }
 
     render() {
-        let randomIdx = Math.floor(Math.random() * 100)
+        console.log(this.props.house)
         return(
             <Container >
                 <Key size={13} color='#484848'/>
                 <Title>
-                {this.props.house.length > 0 && this.props.house[randomIdx].check.experience}
+                    {typeof this.props.house === 'object' && this.props.house.check && this.props.house.check.experience}
                 </Title>
                 <Descrip >
-                    <span>{this.props.house.length > 0 && this.props.house[randomIdx].check.experienceDescrip.slice(0, 35)
-}</span>
+                    <span>{typeof this.props.house === 'object' && this.props.house.check && this.props.house.check.experienceDescrip.slice(0, 35)}</span>
                 </Descrip>
             </Container>
         )

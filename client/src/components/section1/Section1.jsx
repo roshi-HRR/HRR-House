@@ -8,22 +8,22 @@ class Section1 extends Component {
 
 
     render() {
-        let randomIdx = Math.floor(Math.random() * 100)
+
         return(
             <div>
                 <Container >
                     <Left >
                         <Title>
-                            {this.props.house.length > 0 && this.props.house[randomIdx].title}
+                            {typeof this.props.house === 'object' && this.props.house.title}
                         </Title>
                         <Location>
-                            {this.props.house.length > 0 && this.props.house[randomIdx].location}
+                            {typeof this.props.house === 'object' && this.props.house.location}
                         </Location>
                     </ Left>
                     <Right >
-                        <Pic src={this.props.house.length > 0 && this.props.house[randomIdx].imageURL} ></Pic>
-                        {/* <Pic src='http://lorempixel.com/640/480/people/'></Pic> */}
-                        <Host >{this.props.house.length > 0 && this.props.house[randomIdx].hostName}</Host>
+                        <Pic src={typeof this.props.house === 'object' && this.props.house.imageURL} ></Pic>
+
+                        <Host >{typeof this.props.house === 'object' && this.props.house.hostName}</Host>
                     </ Right>
 
 

@@ -10,6 +10,7 @@ class Section2 extends Component {
     }
 
     render() {
+        // console.log(typeof this.props.house === 'object' && this.props)
         return(
             <Container>
 

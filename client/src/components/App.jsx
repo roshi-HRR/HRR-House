@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Section1 from './section1/Section1.jsx';
 import Section2 from './section2/Section2.jsx';
 import Section3 from './section3/Section3.jsx';
+const fetch = require("node-fetch");
 
 class App extends Component {
     constructor(props) {
@@ -11,19 +12,35 @@ class App extends Component {
         this.state = {
             house: []
         }
+
     }
 
     componentDidMount() {
-        
-        fetch('/house')
-            .then((res) => res.json())
-            .then(res => this.setState({house: res}))
+
+        //http://localhost:3005/?house_id=10
+
+        const url = new URL(window.location.href);
+        const houseId = url.searchParams.get('house_id')
+        console.log(houseId)
+
+        fetch(`/house/${houseId}`)
+        .then((res) => res.json())
+        .then(res => this.setState({house: res}))
+
+
+
+        // fetch('/house')
+        // .then((res) => res.json())
+        // .then(res => this.setState({house: res}))
+
     }
 
+
+
     render() {
+
         return (
             <div style={{height: '100%'}}>
-
                 <Summary>
                     <Section1 house={this.state.house}/>
                 </Summary>
@@ -49,17 +66,14 @@ const Summary = styled.div`
     box-sizing: border-box;
     width: 594px;
     height: 141px;
-    /* background-color: grey; */
-`; 
+`;
 
 const Spec = styled(Summary)`
     height: 210.955px;
-    /* background-color: brown; */
 `;
 
 const Rundown = styled(Summary)`
     height: 287.604px;
-    /* background-color: purple; */
 `;
 
 export default App;

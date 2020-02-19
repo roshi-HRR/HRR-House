@@ -5,6 +5,7 @@ let populate = () => {
     //this populate db
 
     for(let i = 0; i < 100; i++) {
+        let unique = i;
         let title = faker.address.streetName() + ' - ' + faker.lorem.words();
         let imageUrl = faker.image.people();
         let hostName = faker.name.findName();
@@ -22,17 +23,17 @@ let populate = () => {
         let experience = faker.random.word() + ' check-in experience';
         let experienceDescrip = faker.lorem.sentence();
         let space = faker.lorem.paragraphs() + ' ' + faker.lorem.paragraphs();
-        
+
         //save to database;
-        
-        mongo.save(title, imageUrl, hostName, location,
+
+        mongo.save(unique, title, imageUrl, hostName, location,
         {guests: room1, bedroom: room2, beds: room3, bath: room4},
         {home: home, homeDescrip: homeDescrip},
         {host: host, hostDescrip: hostDescrip},
         {location: place, locationDescrip: placeDescrip},
         {experience: experience, experienceDescrip: experienceDescrip},
         space);
-        
+
     }
     console.log('successfully populated :)')
 }

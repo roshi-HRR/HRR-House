@@ -27,7 +27,7 @@ class Section3 extends Component {
             status: 'expand'
         })
     };
-    
+
     handleHide(e) {
         this.setState({
             status: 'collapse'
@@ -39,13 +39,13 @@ class Section3 extends Component {
         return(
             <Container >
                 <Paragraph style={{display: this.state.status === 'collapse' ? 'block' : 'none' }}>
-                    {this.props.house.length > 0 && this.props.house[this.state.idx].space.slice(0, 350)}...
+                    {typeof this.props.house === 'object' && this.props.house.space && this.props.house.space.slice(0, 350)}...
                 </Paragraph>
                 <Actual style={{display: this.state.status === 'expand' ? 'block' : 'none' }}>
-                    {this.props.house.length > 0 && this.props.house[this.state.idx].space}
+                    {typeof this.props.house === 'object' && this.props.house.space}
                 </Actual>
                 <Expand onClick={(e) => this.handleExpand(e)} style={{display: this.state.status === 'collapse' ? 'block' : 'none' }}>
-                    Read more about the space 
+                    Read more about the space
                     <Arrow>
                         <ChevronDown size={18} color='#008489'/>
                     </Arrow>
@@ -61,7 +61,7 @@ class Section3 extends Component {
                     Contact host
                 </Contact>
 
-            
+
 
                 <Modal onClose={this.showModal.bind(this)} show={this.state.show}> </Modal>
 
@@ -74,9 +74,9 @@ class Section3 extends Component {
 
 
 const Line = styled.div`
-    border-bottom-width: var(--border-rule-border-width, 1px) !important;
-    border-bottom-color: var(--color-divider, #EBEBEB) !important;
-    border-bottom-style: solid !important;
+    border-bottom-width: 1px;
+    border-bottom-color: #EBEBEB;
+    border-bottom-style: solid;
     margin-top: 30px;
 `;
 
@@ -86,11 +86,11 @@ const Container = styled.div`
 `;
 
 const Paragraph = styled.span`
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-    font-size: 16px !important;
-    font-weight: 300 !important;
-    line-height: 1.375em !important;
-    color: #484848 !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.375em;
+    color: #484848;
 `;
 
 const Actual = styled(Paragraph)`
@@ -98,11 +98,11 @@ const Actual = styled(Paragraph)`
 `;
 
 const Expand = styled.div`
-    color: var(--color-text-link, #008489) !important;
-    font-family: var(--font-font_family, Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif) !important;
-    cursor: pointer !important;
-    user-select: auto !important;
-    text-align: left !important;
+    color: #008489;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    cursor: pointer;
+    user-select: auto;
+    text-align: left;
     text-rendering: auto;
     display: block;
     font-size: 16px;
